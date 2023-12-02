@@ -1,4 +1,4 @@
-import re
+import regex as re
 
 puzzleinput = open("input.txt", "r")
 
@@ -24,7 +24,7 @@ def return_digit(inp):
         "eight": "8",
         "nine": "9"
     }
-    digitbase = re.findall(r'\d|one|two|three|four|five|six|seven|eight|nine', inp)
+    digitbase = re.findall(r'\d|one|two|three|four|five|six|seven|eight|nine', inp, overlapped=True)
 
     for i in range(len(digitbase)):
         if re.search(r'one|two|three|four|five|six|seven|eight|nine', digitbase[i]) is not None:
